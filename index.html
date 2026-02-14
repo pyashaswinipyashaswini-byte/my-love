@@ -174,21 +174,26 @@ Will You  be my lifetime valentine? 💍❤️
 </div>
 </div>
 
-<audio autoplay loop>
-<source src="song.mp3" type="audio/mp3">
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mp3">
 </audio>
 
 <script>
-// PASSWORD
 function unlock(){
-if(document.getElementById("pass").value==="14022014"){  // CHANGE DATE
+if(document.getElementById("pass").value==="14022023"){
 document.getElementById("lock").style.display="none";
 document.getElementById("main").style.display="block";
+
+document.getElementById("bgMusic").play();
 }
 else{
 alert("Wrong Date 😜");
 }
 }
+</script>
+
+
+
 
 // TYPEWRITER
 var text="Thank you soo much for coming into my life an making it more worderful and beautiful. ❤️";
