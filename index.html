@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary To the most Understanding wife! ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #ff758c, #ff7eb3, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    text-align: center;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* PASSWORD SCREEN */
+#lockScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    background: #ff4d6d;
+    color: white;
+    font-weight: bold;
+}
+
+.container {
+    padding-top: 40px;
+}
+
+img {
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px white;
+    margin-top: 20px;
+}
+
+#letter {
+    margin-top: 20px;
+    font-size: 20px;
+    width: 80%;
+    margin: auto;
+    min-height: 80px;
+}
+
+#counter {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+#surprise {
+    display: none;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+    <h2>Enter Our Special Date 💍</h2>
+    <input type="password" id="password" placeholder="DDMMYYYY">
+    <button onclick="unlock()">Unlock ❤️</button>
+</div>
+
+<div class="container" id="mainContent" style="display:none;">
+    <h1>Happy Wedding Anniversary My Love ❤️</h1>
+
+    <img src="image.jpg" alt="Our Memory">
+
+    <div id="letter"></div>
+
+    <div id="counter"></div>
+
+    <button onclick="showSurprise()">Click For Special Surprise 🎁</button>
+
+    <div id="surprise">
+       Thank you for Coming into my life and made it Fulfilled💖  
+        Thank you soo much for Understanding me 💍✨
+    </div>
+</div>
+
+<audio autoplay loop>
+    <source src="song.mp3" type="audio/mp3">
+</audio>
+
+<script>
+// PASSWORD
+function unlock() {
+    var pass = document.getElementById("password").value;
+    if(pass === "14022014") {  // CHANGE THIS DATE
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+    } else {
+        alert("Wrong Date 😜 Try Again!");
+    }
+}
+
+// TYPEWRITER EFFECT
+var text = "I try to fullfill all ur expectations expecting from Me Love soo much POTTI! Thank you for being my forever love ❤️";
+var i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("letter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+    }
+}
+setTimeout(typeWriter, 1500);
+
+// YEARS COUNTER
+var weddingDate = new Date("Feb 14, 2014"); // CHANGE DATE
+var today = new Date();
+var years = today.getFullYear() - weddingDate.getFullYear();
+document.getElementById("counter").innerHTML = "UNDERSTANDING " + HAPPILY + " beautiful years ❤️";
+
+// SURPRISE BUTTON
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+// HEARTS
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
